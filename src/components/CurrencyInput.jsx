@@ -6,6 +6,7 @@ function CurrencyInput({
     currencies,
     onAmountChange,
     onCurrencyChange,
+    disabledCurrency,
 }) {
 
     return (
@@ -21,7 +22,11 @@ function CurrencyInput({
               onChange={(e)=> onCurrencyChange(e.target.value)}
             >
                 {currencies.map((cur) => (
-                    <option key={cur} value={cur}>
+                    <option 
+                        key={cur} 
+                        value={cur}
+                        disabled={cur === disabledCurrency} //se la valuta corrente cur è uguale a quella da disabilitare, l'attributo 'disabled' sarà true, altrimenti false 
+                    >
                         {cur}
                     </option>
                 ))}
