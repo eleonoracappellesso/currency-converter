@@ -93,21 +93,27 @@ export default function App() {
         <p>Veloce e basato sui dati più recenti di Frankfurter.app</p>
         {isLoading && <p className="loading">Aggiornamento...</p>}
         <div className="converter-body">
+
           <CurrencyInput
             currencies={currencies}
             amount={amount1}
             currency={currency1}
             onAmountChange={handleAmount1Change}
             onCurrencyChange={handleCurrency1Change}
+            disabledCurrency={currency2}
           />
+
           <div className="equals">=</div>
+
           <CurrencyInput
             currencies={currencies}
             amount={amount2}
             currency={currency2}
             onAmountChange={handleAmount2Change}
             onCurrencyChange={handleCurrency2Change}
+            disabledCurrency={currency1}
           />
+
         </div>
       </div>
     )
